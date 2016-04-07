@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{4E56DCE2-E223-FB23-2518-7E12D11EBFDA}") = "jumpDemo", "Assembly-CSharp-firstpass.csproj", "{BA43944D-EDB8-D2C0-0D56-D80863E1A274}"
+EndProject
 Project("{4E56DCE2-E223-FB23-2518-7E12D11EBFDA}") = "jumpDemo", "Assembly-CSharp.csproj", "{F39B8F60-4980-2F9B-470B-BA5488FC66E2}"
 EndProject
 Project("{4E56DCE2-E223-FB23-2518-7E12D11EBFDA}") = "jumpDemo", "Assembly-CSharp-Editor.csproj", "{EF10161C-80A3-CE42-40E3-047DC5CBA7EB}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA43944D-EDB8-D2C0-0D56-D80863E1A274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA43944D-EDB8-D2C0-0D56-D80863E1A274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA43944D-EDB8-D2C0-0D56-D80863E1A274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA43944D-EDB8-D2C0-0D56-D80863E1A274}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F39B8F60-4980-2F9B-470B-BA5488FC66E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F39B8F60-4980-2F9B-470B-BA5488FC66E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F39B8F60-4980-2F9B-470B-BA5488FC66E2}.Release|Any CPU.ActiveCfg = Release|Any CPU

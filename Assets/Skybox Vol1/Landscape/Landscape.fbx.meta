@@ -3,7 +3,16 @@ guid: 868cfa698daf1446b88b247d47336384
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
+    100000: Google_Earth_Terrain
+    100002: //RootNode
+    100004: Mesh1
+    400000: Google_Earth_Terrain
+    400002: //RootNode
+    400004: Mesh1
+    2300000: Mesh1
+    3300000: Mesh1
     4300000: Mesh1
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 1

@@ -8,6 +8,7 @@ public class jumpKa : MonoBehaviour
 	private Rigidbody rigid;
 	private AudioSource giggle;
 	public int playerId = 0;
+	public Animator anim;
 	// The Rewired player id of this character
 
 	private Player player;
@@ -23,6 +24,7 @@ public class jumpKa : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		anim = GetComponent<Animator> ();
 		rigid = GetComponent<Rigidbody> ();
 		giggle = GetComponent<AudioSource> ();
 	}
@@ -31,22 +33,29 @@ public class jumpKa : MonoBehaviour
 	void Update ()
 	{
 		getInput ();
-		jumpUp ();
-
-	}
-
-	private void jumpUp ()
-	{
-		if (myJump) {
-			GetComponent<Animation> ().Play ();
-			rigid.AddForce (Vector3.up * jumpHeight);
-			giggle.Play ();
-		}
-
+		getGoing ();
 	}
 
 	private void getInput ()
 	{
 		myJump = player.GetButtonDown ("Jump");
+	}
+
+	private void getGoing ()
+	{
+		if (myJump) {
+			anim.SetBool ("isJumping", true);
+		}
+	}
+
+	void jumpUp ()
+	{
+		rigid.AddForce (Vector3.up * jumpHeight);
+		anim.SetBool ("isJumping", false);
+	}
+
+	void theGiggle ()
+	{
+		giggle.Play ();
 	}
 }

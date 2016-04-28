@@ -1,25 +1,46 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Rewired;
 
 public class rollKube : MonoBehaviour
 {
 
-	public int kubeSpeed;
+	public int playerId = 0;
+	public float kubeSpeed;
 	float horiMove;
-	Rigidbody rigid;
+	//Rigidbody rigid;
+	private Player player;
+	public Animator anim;
 
-
-	// Use this for initialization
 	void Start ()
 	{
-		rigid = GetComponent<Rigidbody> ();
+		//rigid = GetComponent<Rigidbody> ();
+		player = ReInput.players.GetPlayer (playerId);
+		anim = GetComponent<Animator> ();
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate ()
+
+	void Update ()
 	{
-		horiMove = Input.GetAxis ("Horizontal") * -kubeSpeed;
-		rigid.AddTorque (0, 0, horiMove);
+		horiMove = player.GetAxis ("Move Horizontal");
+		transform.Translate (horiMove * kubeSpeed, 0, 0);
+		GetMoving ();
 	}
+
+	//	void FixedUpdate ()
+	//	{
+	//
+	//		//rigid.AddTorque (0, 0, horiMove);
+	//
+	//	}
+
+	private void GetMoving ()
+	{
+		if (horiMove != 0) {
+			anim.SetBool ("isMoving", true);
+		} else {
+			anim.SetBool ("isMoving", false);
+		}
+	}
+
 }
 
